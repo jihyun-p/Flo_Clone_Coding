@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.jihyun.floclonecoding"
-    compileSdk = 34
+    compileSdk = 35
 
     viewBinding {
         enable = true
