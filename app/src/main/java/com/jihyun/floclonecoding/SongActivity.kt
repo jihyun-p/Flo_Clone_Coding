@@ -10,10 +10,11 @@ class SongActivity : AppCompatActivity() {
 
     lateinit var binding : ActivitySongBinding
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         binding = ActivitySongBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.songDownIb.setOnClickListener {
             finish()
         }
@@ -22,6 +23,11 @@ class SongActivity : AppCompatActivity() {
         }
         binding.songPauseIv.setOnClickListener {
             setPlayStatus(true) // 아래 함수의 if 부분 출력 = 재생 상태 = songPauseIv = GONE
+        }
+        if (intent.hasExtra("title") && intent.hasExtra("singer")){
+            binding.songMusicTitleTv.text=intent.getStringExtra("title")
+            binding.songSingerNameTv.text=intent.getStringExtra("singer")
+
         }
     }
 
