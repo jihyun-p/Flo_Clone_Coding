@@ -46,8 +46,17 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
     implementation(libs.androidx.room.common)
+    implementation(libs.androidx.room.ktx)
+
+    // Room 의존성 추가
+    implementation(libs.androidx.room.runtime) // Room 런타임
+    implementation(libs.androidx.room.ktx)     // Room Kotlin 확장
+    //kapt(libs.androidx.room.compiler)          // Room 컴파일러
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
 }
